@@ -1,0 +1,62 @@
+
+<section id="user-area">
+  <div class="container">
+    <h2>האזור האישי שלך</h2>
+
+    <div style="background:#eef6f6;padding:1rem;border-radius:8px;margin-bottom:1rem;">
+      <p><strong>הקמפיין יסתיים בעוד:</strong> <span id="daysRemaining" class="highlight">31</span> ימים</p>
+    </div>
+
+    <div style="background:#fff9e6; padding:1rem; border:2px solid #f5c542; border-radius:12px; margin:1rem 0;">
+      <h3 style="color:#d35400; margin:0;">המחיר הנוכחי של הכורסה עבורך:</h3>
+      <p style="font-size:1.3rem;"><strong>₪3,250</strong></p>
+      <p>כבר צברת הנחה קבוצתית בגלל שהגענו ל-150 משתתפים! גם אם לא תצרף אף חבר – אתה זכאי למחיר מוזל מהמחיר המקורי <del>₪3,500</del>.</p>
+    </div>
+
+    <p>הקישור האישי שלך לשיתוף: <br>
+      <input type="text" value="https://site.com/?ref=123456" readonly style="width:100%; padding:10px; direction: ltr;">
+    </p>
+
+    <p><strong>כמות חברים שצירפת עד כה:</strong> <span class="highlight">0</span></p>
+    <p><strong>סה"כ הנחה שצברת:</strong> <span class="highlight">₪0</span></p>
+
+    <h3>איך ההפניות משפיעות על המחיר הסופי שלך?</h3>
+    <table>
+      <thead>
+        <tr><th>כמות חברים שצירפת</th><th>הנחה שתקבל</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>₪150</td></tr>
+        <tr><td>2</td><td>₪300</td></tr>
+        <tr><td>3</td><td>₪450</td></tr>
+        <tr><td>4</td><td>₪600</td></tr>
+        <tr><td>5</td><td>₪750</td></tr>
+        <tr><td>10</td><td>₪1,500</td></tr>
+      </tbody>
+    </table>
+
+    <p class="highlight">ככל שתשלח את הקישור שלך ליותר חברים, כך תשלם פחות!</p>
+    <p>הפץ את הקישור שלך בוואטסאפ, פייסבוק, אינסטגרם, קבוצות משפחתיות – כל הפניה שווה לך 150 ש"ח הנחה!</p>
+
+    <div style="background:#e9f7ff; padding:1rem; border-radius:10px; margin-top:2rem; border:1px solid #b6dfff;">
+      <h3 style="margin-top:0; color:#007acc;">ליווי מקצועי על ידי VIPO</h3>
+      <p>המכירה הקבוצתית הזו מתבצעת בליווי מלא על ידי <strong>חברת VIPO</strong> – צוות מומחים מקצועיים עם ניסיון של מעל 15 שנה ביבוא מסין לשוק הישראלי. החברה מתמחה בליווי תהליכי רכישה, בדיקות איכות, ניהול משא ומתן מול מפעלים, טיפול בתשלומים, שינוע, מילות מכס ועמידה בתקנים.</p>
+      <p>למידע נוסף על החברה בקרו באתר: <a href="https://vipoconnect.github.io/6/#" target="_blank">vipoconnect.github.io</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const startDate = new Date();
+  const endDate = new Date();
+  endDate.setDate(startDate.getDate() + 31);
+  const updateDaysLeft = () => {
+    const today = new Date();
+    const diffTime = endDate - today;
+    const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
+    const element = document.getElementById('daysRemaining');
+    if (element) element.innerText = diffDays;
+  };
+  updateDaysLeft();
+  setInterval(updateDaysLeft, 1000 * 60 * 60);
+</script>
